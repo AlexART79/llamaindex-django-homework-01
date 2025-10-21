@@ -31,6 +31,7 @@ def format_cv_past_experience(cv: CV):
         ...
     ]
     """
+
     prompt = f"""
         Reformat the following CV past experience data into a structured JSON array.            
         Desired output format example:
