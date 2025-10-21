@@ -1,0 +1,27 @@
+{# summary.html #}
+{% extends "cvs/base.html" %}
+{% block title %}CV Summary{% endblock %}
+{% block header %}CV Summary{% endblock %}
+{% block content %}
+    <section class="container my-4">
+        <!-- Candidate Summary -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title text-primary fw-bold mb-3">{{ cv.name }}</h3>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                    <p class="mb-1"><strong>Job Title:</strong> {{ cv.job_title.name }}</p>
+                    </div>
+                </div>
+
+                <p class="card-text">
+                    {{ summary }}
+                </p>
+                <div class="text-center mt-3">
+                    <a href="/cvs/{{ cv.id }}/" class="btn btn-outline-primary btn-sm">Show more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{# details.html #}
+{% extends "cvs/base.html" %}
+{% block title %}CV Details{% endblock %}
+{% block header %}CV Details{% endblock %}
+{% block content %}
+    <section>
+        <!-- Candidate Info -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title mb-3 text-primary fw-bold">{{ cv.name }}</h3>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>Job Title:</strong> {{ cv.job_title.name }}</p>
+                        <p class="mb-1"><strong>Years of Experience:</strong> {{ cv.years_of_experience }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>Skills:</strong> {{ cv.skills }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Past Experience -->
+        <h4 class="fw-semibold mb-3">Past Experience</h4>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            {{ formatted_experience }}
+        </div>
+        <!-- Show less link -->
+        <div class="text-center mt-4">
+            <a href="/cvs/{{ cv.id }}/summary/" class="btn btn-outline-primary btn-sm">Show less</a>
+        </div>
+    </section>
+{% endblock %}
