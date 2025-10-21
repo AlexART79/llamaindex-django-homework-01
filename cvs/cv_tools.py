@@ -19,7 +19,7 @@ def summarise_cv(cv: CV):
     return res
 
 def format_cv_past_experience(cv: CV):
-    output_format="""
+    json_output_structure="""
     [
         {
             "company_name": "CompanyName",
@@ -36,7 +36,7 @@ def format_cv_past_experience(cv: CV):
         Reformat the following CV past experience data into a structured JSON array.            
         Desired output format example:
         
-        {output_format}            
+        {json_output_structure}            
 
         Input CV data:
         {cv.past_experience}
@@ -48,7 +48,7 @@ def format_cv_past_experience(cv: CV):
     return res
 
 def find_similar_cvs(cv: CV, top_k: int = 4):
-    output_format = """
+    json_output_structure = """
         [
             {
                 "id": "ID of the CV",
@@ -63,9 +63,14 @@ def find_similar_cvs(cv: CV, top_k: int = 4):
 
     similar_prompt = f"""
         Find {top_k} CVs that are most similar or somehow related to a provided CV details.
+        For example, related skills, similar education, similar or related job titles:
+        - Frontend developer -- Web designer, JS engineer, Typescript, React developer
+        - Python programmer -- ML, Data scientist, Backend developer
+        - Project manager -- Product manager, Scrum master
+        etc.
         Desired response format - a JSON array of following items:
         
-        {output_format}        
+        {json_output_structure}        
 
         CV details:
             Skills: {cv.skills}
