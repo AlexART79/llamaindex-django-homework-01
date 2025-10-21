@@ -124,5 +124,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 import os
 
-CHROMA_PERSIST_DIR = os.getenv("CHROMA_PERSIST_DIR", os.path.join(BASE_DIR, "var", "chroma"))
+CHROMA_PERSIST_DIR = os.getenv("CHROMA_PERSIST_DIR", os.path.join(BASE_DIR, ".chroma_db"))
 LLM_INDEX_SIM_TOP_K = int(os.getenv("LLM_INDEX_SIM_TOP_K", "5"))

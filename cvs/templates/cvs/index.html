@@ -7,11 +7,7 @@
     {% if cv_list %}
         <div class="row row-cols-1 row-cols-md-2 g-3 list-unstyled">
         {% for cv in cv_list %}
-            <div class="col">
-            <a href="{{ cv.id }}/summary/" class="text-decoration-none text-dark fw-semibold d-block p-3 bg-white rounded shadow-sm hover-shadow">
-            {{ cv.name }} <span class="text-muted d-block small">{{ cv.job_title.name }}</span>
-            </a>
-            </div>
+            {% include "cvs/cv_list_item.html" with cv=cv only %}
         {% endfor %}
         </div>
 

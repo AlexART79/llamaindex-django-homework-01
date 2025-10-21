@@ -12,48 +12,37 @@ def index(request):
 
 def details(request, cv_id):
     # use LLM to reformat past experience into HTML format
-    from .cv_tools import format_cv_past_experience
+    from .cv_tools import format_cv_past_experience, find_similar_cvs
 
     cv = CV.objects.get(pk=cv_id)
     res = format_cv_past_experience(cv)
 
-    from django.utils.safestring import mark_safe
-    formatted = mark_safe(res.text)
+    import json
+    formatted = json.loads(res.text)
+
+    cv = CV.objects.get(pk=cv_id)
+
+    import json
+    related_cvs = json.loads(find_similar_cvs(cv)["answer"])
 
     template = loader.get_template("cvs/details.html")
-    context = {"cv": cv, "formatted_experience": formatted}
+    context = {"cv": cv, "past_exp": formatted, "related": related_cvs}
 
     return HttpResponse(template.render(context, request))
 
 def summary(request, cv_id):
     # use LLM to summarise CV data
-    from .cv_tools import summarise_cv
+    from .cv_tools import summarise_cv, find_similar_cvs
 
     cv = CV.objects.get(pk=cv_id)
     res = summarise_cv(cv)
 
-    summary = res.text
+    summary_text = res.text
 
-    similar_prompt = f"""
-        Find the CVs most similar to a following summary.
-        Desired response format - a list of following items:
-        
-        <div class="col">
-        <a href="/cvs/[cv_id]/summary/" class="text-decoration-none text-dark fw-semibold d-block p-3 bg-white rounded shadow-sm hover-shadow">
-        [cv_name] <span class="text-muted d-block small">[cv_job_title_name]</span>
-        </a>
-        </div>
-        <div class="col">
-            ...
-        </div>
-        ...
-        
-        Summary:
-        {summary}
-    """
-    # related = search_cvs(similar_prompt, top_k=4)["answer"]
+    import json
+    related_cvs = json.loads(find_similar_cvs(cv)["answer"])
 
     template = loader.get_template("cvs/summary.html")
-    context = {"cv": cv, "summary": summary, }
+    context = {"cv": cv, "summary": summary_text, "related": related_cvs}
 
     return HttpResponse(template.render(context, request))
