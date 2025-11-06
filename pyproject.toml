@@ -10,4 +10,6 @@ dependencies = [
     "llama-index>=0.14.5",
     "llama-index-vector-stores-chroma>=0.5.3",
     "python-dotenv>=1.1.1",
+    "tavily-python>=0.7.12",
+    "llama-index-tools-tavily-research>=0.4.2",
 ]

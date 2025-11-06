@@ -475,8 +475,10 @@ dependencies = [
     { name = "chroma" },
     { name = "django" },
     { name = "llama-index" },
+    { name = "llama-index-tools-tavily-research" },
     { name = "llama-index-vector-stores-chroma" },
     { name = "python-dotenv" },
+    { name = "tavily-python" },
 ]
 
 [package.metadata]
@@ -484,8 +486,10 @@ requires-dist = [
     { name = "chroma", specifier = ">=0.2.0" },
     { name = "django", specifier = ">=5.2.7" },
     { name = "llama-index", specifier = ">=0.14.5" },
+    { name = "llama-index-tools-tavily-research", specifier = ">=0.4.2" },
     { name = "llama-index-vector-stores-chroma", specifier = ">=0.5.3" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
+    { name = "tavily-python", specifier = ">=0.7.12" },
 ]
 
 [[package]]
@@ -1138,6 +1142,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/b3/77/5bfaab20e6ec8428dbf2352e18be550c957602723d69383908176b5686cd/llama_index_readers_llama_parse-0.5.1.tar.gz", hash = "sha256:2b78b73faa933e30e6c69df351e4e9f36dfe2ae142e2ab3969ddd2ac48930e37", size = 3858, upload-time = "2025-09-08T20:41:29.201Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/68/81/52410c7245dcbf1a54756a9ce3892cdd167ec0b884d696de1304ca3f452e/llama_index_readers_llama_parse-0.5.1-py3-none-any.whl", hash = "sha256:0d41450ed29b0c49c024e206ef6c8e662b1854e77a1c5faefed3b958be54f880", size = 3203, upload-time = "2025-09-08T20:41:28.438Z" },
+]
+
+[[package]]
+name = "llama-index-tools-tavily-research"
+version = "0.4.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "llama-index-core" },
+    { name = "tavily-python" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c8/7c/2dae517040a0e1fdce5168873707bdb6baa05f5af0e53861b15f5e588b8d/llama_index_tools_tavily_research-0.4.2.tar.gz", hash = "sha256:444c893f0eeacdead10686199e2138f627f5406d0e240efac9c83c417a0a06c0", size = 5177, upload-time = "2025-10-08T21:17:40.959Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f0/97/28727c7503e9243ac177a6ae5f0a9fcbe94f11d09aa8dbbbb8c7294ff869/llama_index_tools_tavily_research-0.4.2-py3-none-any.whl", hash = "sha256:fffce90c7dcd2cedc33728e87edec0e8285ff20e6f8831baaeefb445f71eb97c", size = 4861, upload-time = "2025-10-08T21:17:40.166Z" },
 ]
 
 [[package]]
@@ -2470,6 +2487,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/83/d3/803453b36afefb7c2bb238361cd4ae6125a569b4db67cd9e79846ba2d68c/sympy-1.14.0.tar.gz", hash = "sha256:d3d3fe8df1e5a0b42f0e7bdf50541697dbe7d23746e894990c030e2b05e72517", size = 7793921, upload-time = "2025-04-27T18:05:01.611Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl", hash = "sha256:e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5", size = 6299353, upload-time = "2025-04-27T18:04:59.103Z" },
+]
+
+[[package]]
+name = "tavily-python"
+version = "0.7.12"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+    { name = "requests" },
+    { name = "tiktoken" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3e/42/ce2329635b844dda548110a5dfa0ab5631cdc1085e15c2d68b1850a2d112/tavily_python-0.7.12.tar.gz", hash = "sha256:661945bbc9284cdfbe70fb50de3951fd656bfd72e38e352481d333a36ae91f5a", size = 17282, upload-time = "2025-09-10T17:02:01.281Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9a/e2/dbc246d9fb24433f77b17d9ee4e750a1e2718432ebde2756589c9154cbad/tavily_python-0.7.12-py3-none-any.whl", hash = "sha256:00d09b9de3ca02ef9a994cf4e7ae43d4ec9d199f0566ba6e52cbfcbd07349bd1", size = 15473, upload-time = "2025-09-10T17:01:59.859Z" },
 ]
 
 [[package]]
