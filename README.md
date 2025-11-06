@@ -113,6 +113,9 @@ CHROMA_PERSIST_DIR=.chroma
 # Optional: how many similar results to retrieve by default
 LLM_INDEX_SIM_TOP_K=4
 
+# Tavily API key
+TAVILY_API_KEY=...
+
 # Standard Django settings you may already have
 DJANGO_SETTINGS_MODULE=project.settings
 ```
